@@ -12,6 +12,10 @@ target/
 .settings
 .springBeans
 .sts4-cache
+.metadata/
+.jdtls/
+.recommenders/
+bin/
 
 ### IntelliJ IDEA ###
 .idea
