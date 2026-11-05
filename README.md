@@ -27,3 +27,7 @@ La primera devuelve metadatos; la segunda devuelve `application/pdf` como adjunt
 
 - `./mvnw test`: valida contrato, persistencia, PDF, paginación, deduplicación, consumo y permisos. Necesita PostgreSQL local; no necesita RabbitMQ.
 - `./mvnw -Ddocuments.rabbit.integration=true -Dtest=DocumentsRabbitIntegrationTests test`: prueba optativa con RabbitMQ y PostgreSQL locales; verifica ambas colas, una entrega duplicada y el envío de un trabajo inválido a `documents.intake.dlq`. Deja ese mensaje de demostración en la DLQ para inspeccionarlo.
+
+## Docker local
+
+El [Compose del repositorio Paquetes](../pack-it-flawlessly-backend/compose.yaml) construye este servicio y le asigna su propia instancia PostgreSQL (`postgres-documents`). Consulta el README de Paquetes para preparar `.env.compose`, levantar el clúster RabbitMQ y verificar el stack completo.
